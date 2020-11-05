@@ -12,8 +12,10 @@ class CensusFTP {
       // this line will split the output into lines, and from each line grab the end of the file
       // (all filenames are fixed length 27 chars)
       // then it will trim the names and filter out any empty ones
+      console.log(res, 'res');
       let files = res.split('\n').map((file) => (file.substr(-27).trim())).filter((file) => (file.length > 0));
 
+      console.log(files, 'files');
       cb(null, files);
     });
   }
