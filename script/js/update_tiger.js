@@ -5,7 +5,7 @@ const logger = require('pelias-logger').get('interpolation(TIGER)');
 const config = require('pelias-config').generate();
 const _ = require('lodash');
 
-const CensusS3Mirror = require('./adapter/CensusS3Mirror');
+const CensusS3Mirror = require('./adapter/CensusFTP');
 const adapter = new CensusS3Mirror();
 
 let TARGET_DIR = _.get(config, 'imports.interpolation.download.tiger.datapath', './data/downloads');
